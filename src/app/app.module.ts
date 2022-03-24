@@ -15,6 +15,7 @@ import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.compo
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminModule } from './admin/admin.module';
+import { AuthGuard } from './services/app.guard';
 
 @NgModule({
   declarations: [AppComponent, SobreComponent, CadastroComponent],
@@ -29,7 +30,7 @@ import { AdminModule } from './admin/admin.module';
     CustomFormsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
