@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './navegacao/home/home.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
+import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 
 const rootRouterConfig: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const rootRouterConfig: Routes = [
         (m) => m.ProdutoModule
       ),
   },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
