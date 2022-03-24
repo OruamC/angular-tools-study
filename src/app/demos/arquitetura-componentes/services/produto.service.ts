@@ -45,14 +45,17 @@ export class ProdutoService {
       {
         id: 6,
         nome: 'Test 6',
-        ativo: true,
+        ativo: false,
         valor: 600,
         imagem: 'headset.jpg',
       },
     ];
   }
 
-  obterTodos(): Produto[] {
+  obterTodos(estado: string): Produto[] {
+    if (estado === 'ativos') {
+      return this.produtos.filter((produto) => produto.ativo);
+    }
     return this.produtos;
   }
 
