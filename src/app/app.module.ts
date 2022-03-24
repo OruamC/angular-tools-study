@@ -13,11 +13,14 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { AppRoutingModule } from './app.routes';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent, SobreComponent, CadastroComponent],
   imports: [
     BrowserModule,
+    AdminModule,
     FormsModule,
     ReactiveFormsModule,
     NavegacaoModule,
