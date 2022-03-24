@@ -77,7 +77,7 @@ export class ProdutoDashboardComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log('Objeto do contador: ', this.contador.produtos);
+    // console.log('Objeto do contador: ', this.contador.produtos);
 
     let clickTexto: Observable<any> = fromEvent(
       this.mensagemTela.nativeElement,
@@ -88,9 +88,9 @@ export class ProdutoDashboardComponent implements OnInit, AfterViewInit {
       return;
     });
 
-    console.log(this.botoes);
+    // console.log(this.botoes);
     this.botoes.forEach((p) => {
-      console.log(p.produto);
+      // console.log(p.produto);
     });
   }
 
