@@ -16,6 +16,7 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './services/app.guard';
+import { CadastroGuard } from './services/cadastro.guard';
 
 @NgModule({
   declarations: [AppComponent, SobreComponent, CadastroComponent],
@@ -30,7 +31,7 @@ import { AuthGuard } from './services/app.guard';
     CustomFormsModule,
     AppRoutingModule,
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, CadastroGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
