@@ -17,9 +17,10 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
+import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 
 @NgModule({
-  declarations: [AppComponent, SobreComponent, CadastroComponent],
+  declarations: [AppComponent, SobreComponent, CadastroComponent, FilmesComponent],
   imports: [
     BrowserModule,
     AdminModule,
