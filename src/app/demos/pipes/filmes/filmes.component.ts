@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Filme } from './filmes';
+import { imageformaterPipe } from './image.pipe';
 
 @Component({
   selector: 'app-filmes',
   templateUrl: './filmes.component.html',
+  providers: [imageformaterPipe],
 })
 export class FilmesComponent implements OnInit {
   filmes: Filme[];
+  mapped: Filme[];
 
-  constructor() {}
+  constructor(private imageFormat: imageformaterPipe) {}
 
   ngOnInit() {
     this.filmes = [
@@ -30,7 +33,7 @@ export class FilmesComponent implements OnInit {
         nome: 'Batman: O Cavaleiro das Trevas',
         dataLancamento: new Date('08/01/2008'),
         valor: 70.0,
-        imagem: 'batman2008.jpg',
+        imagem: 'Batman2008.jpg',
         tamanho: '749974720',
       },
       {
@@ -48,5 +51,15 @@ export class FilmesComponent implements OnInit {
         tamanho: '773039680',
       },
     ];
+
+    this.mapped = this.filmes.map((filme) => {
+      return {
+        nome: filme.nome,
+        dataLancamento: filme.dataLancamento,
+        valor: filme.valor,
+        tamanho: filme.tamanho,
+        imagem: this.imageFormat.transform(filme.imagem, 'default', true),
+      };
+    });
   }
 }
