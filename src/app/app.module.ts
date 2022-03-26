@@ -21,6 +21,7 @@ import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
 import { imageformaterPipe } from './demos/pipes/filmes/image.pipe';
+import { BarModule } from './demos/bar-di-zones/bar.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { imageformaterPipe } from './demos/pipes/filmes/image.pipe';
     FormsModule,
     ReactiveFormsModule,
     NavegacaoModule,
+    BarModule,
     NgBrazil,
     TextMaskModule,
     CustomFormsModule,
