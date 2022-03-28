@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { BarServices } from './bar.service';
 
 @Component({
   selector: 'app-bar',
   templateUrl: './bar.component.html',
-  styles: [],
+  providers: [{ provide: BarServices, useClass: BarServices }],
 })
 export class BarComponent implements OnInit {
-  constructor() {}
+  barBebida1: string;
 
-  ngOnInit() {}
+  constructor(private barServices: BarServices) {}
+
+  ngOnInit() {
+    this.barBebida1 = this.barServices.obterBebidas();
+  }
 }

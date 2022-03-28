@@ -37,8 +37,8 @@ const rootRouterConfig: Routes = [
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
-    canLoad: [AuthGuard],
-    canActivate: [AuthGuard],
+    // canLoad: [AuthGuard],
+    //canActivate: [AuthGuard],
   },
   { path: '**', component: NotFoundComponent },
 ];
