@@ -41,7 +41,10 @@ export const BAR_PROVIDERS: Provider[] = [BarServices];
     FormsModule,
     ReactiveFormsModule,
     NavegacaoModule,
-    BarModule,
+    BarModule.forRoot({
+      unidadeId: 1000,
+      unidadeToken: 'aseoiha45475621asd',
+    }),
     NgBrazil,
     TextMaskModule,
     CustomFormsModule,
