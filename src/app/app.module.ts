@@ -23,6 +23,7 @@ import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
 import { imageformaterPipe } from './demos/pipes/filmes/image.pipe';
 import { BarModule } from './demos/bar-di-zones/bar.module';
 import { BarServices } from './demos/bar-di-zones/bar.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 export const BAR_PROVIDERS: Provider[] = [BarServices];
 
@@ -36,6 +37,7 @@ export const BAR_PROVIDERS: Provider[] = [BarServices];
     imageformaterPipe,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AdminModule,
     FormsModule,
