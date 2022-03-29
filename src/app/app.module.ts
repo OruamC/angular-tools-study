@@ -24,6 +24,7 @@ import { imageformaterPipe } from './demos/pipes/filmes/image.pipe';
 import { BarModule } from './demos/bar-di-zones/bar.module';
 import { BarServices } from './demos/bar-di-zones/bar.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TodoModule } from './demos/todo-list/todo.module';
 
 export const BAR_PROVIDERS: Provider[] = [BarServices];
 
@@ -51,6 +52,7 @@ export const BAR_PROVIDERS: Provider[] = [BarServices];
     TextMaskModule,
     CustomFormsModule,
     AppRoutingModule,
+    TodoModule,
   ],
   providers: [AuthGuard, CadastroGuard],
   bootstrap: [AppComponent],
