@@ -8,6 +8,23 @@
       <tr *ngFor="let item of list">
         <td>
           <span>{{ item.nome }}</span>
+
+          <span
+            *ngIf="!item.finalizado && item.iniciado"
+            class="task-list__finalizado"
+          ></span>
+          <span
+            *ngIf="!item.finalizado && !item.iniciado"
+            class="task-list__iniciado"
+          ></span>
+          <span
+            *ngIf="item.finalizado && !item.iniciado"
+            class="task-list__retroceder"
+          ></span>
+          <span
+            *ngIf="!item.finalizado && item.iniciado"
+            class="task-list__retroceder"
+          ></span>
         </td>
       </tr>
     </tbody>
