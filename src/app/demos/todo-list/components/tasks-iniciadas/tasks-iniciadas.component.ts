@@ -22,4 +22,8 @@ export class TasksIniciadasComponent {
         )
       );
   }
+
+  onToggle(event) {
+    this.taskService.toggle(event);
+  }
 }

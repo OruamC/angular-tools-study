@@ -9,13 +9,13 @@ import { Store } from '../../todo.store';
   templateUrl: './tasks.component.html',
 })
 export class TasksComponent implements OnInit, OnDestroy {
-  todoList$: Observable<any[]>;
+  todolist$: Observable<any[]>;
   subscription: Subscription;
 
   constructor(private taskService: TasksService, private store: Store) {}
 
-  ngOnInit(): void {
-    this.todoList$ = this.store
+  ngOnInit() {
+    this.todolist$ = this.store
       .getTodoList()
       .pipe(
         map((todolist) =>
@@ -24,6 +24,10 @@ export class TasksComponent implements OnInit, OnDestroy {
       );
 
     this.subscription = this.taskService.getTodoList$.subscribe();
+  }
+
+  onToggle(event) {
+    this.taskService.toggle(event);
   }
 
   ngOnDestroy(): void {
